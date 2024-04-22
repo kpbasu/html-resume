@@ -10,5 +10,7 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy your HTML website files into the container
 COPY . /usr/share/nginx/html
 
+RUN ls -l /usr/share/nginx/html
+
 # Expose the default Nginx port 
 EXPOSE 80
