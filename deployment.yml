@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-resume-deployment 
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: html-resume
+  template:
+    metadata:
+      labels:
+        app: html-resume
+    spec:
+      containers:
+      - name: html-resume
+        image: docker.io/kpbasu/html-resume
+        ports:
+        - containerPort: 80
