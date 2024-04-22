@@ -1,19 +1,43 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: html-resume-deployment 
+metadata: 
+  name: html-resume
+  labels:
+    app: html-resume 
 spec:
-  replicas: 1 # Number of pods to run
+  replicas: 1 # Number of pods for your application
   selector:
     matchLabels:
       app: html-resume
   template:
     metadata:
       labels:
-        app: html-resume
+        app: html-resume 
     spec:
       containers:
-      - name: html-resume
-        image: docker.io/kpbasu/html-resume
+      - name: html-resume 
+        image: docker.io/kpbasu/html-resume:latest   # Image name 
         ports:
-        - containerPort: 80
+        - containerPort: 80  
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+            initialDelaySeconds: 10 
+            periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10 
+        securityContext:
+          readOnlyRootFilesystem: true  # Added for basic security
+
