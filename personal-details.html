@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Details</title>
+    <style>
+        body {
+            background-color: #f0f0f5; /* Adjust color as desired */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>My Personal Details</h2>
+
+        <img src="./Kaliprasanna_05132023_175514.jpg" alt="My Profile Picture" style="width:80px;height:80px;background-color:rgba(255, 99, 71, 0.2);" >  
+
+        <h3>Basic Information</h3>
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td>Kaliprasanna Basu</td> 
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>kaliprasannabasu143@gmail.com</td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td>Kolkata, India</td>
+            </tr>
+        </table>
+</body>
+
+<p id="demo" style="background-color:rgba(255, 99, 71, 0.2);"> Date and time</p>
+
+<body>
+        <h3>Skills</h3> 
+        <table>
+            <tr>
+                <th>Experience / Skill</th>
+                <th>Level </th> 
+            </tr>
+            <tr>
+                <td>DevSecOps</td>
+                <td>Expertise </td> 
+            </tr>
+            <tr>
+                <td>Fullstack Developer</td>
+                <td>Intermediate </td> 
+            </tr>
+            <tr>
+                <td>Site Reliability Engineer</td>
+                <td>Advance </td>
+            </tr> 
+        </table>
+    </div>
+</body>
+<script>
+    function updateDateTime() {
+        const now = new Date(); // Get the current date and time
+        const formattedDateTime = now.toLocaleString(); // Format it nicely
+
+        document.getElementById('demo').innerHTML = formattedDateTime; 
+    }
+
+    updateDateTime(); // Display the date and time initially
+    setInterval(updateDateTime, 1000); // Update every second 
+</script>
+
+
+
+</html>
