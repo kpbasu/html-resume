@@ -8,8 +8,10 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy your HTML website files into the container
-COPY . /usr/share/nginx/html
+COPY personal-details.html /usr/share/nginx/html
+COPY Kaliprasanna_05132023_175514.jpg /usr/share/nginx/html
 
+# Check the files upload or not
 RUN ls -l /usr/share/nginx/html
 
 # Expose the default Nginx port 
