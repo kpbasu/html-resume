@@ -15,4 +15,4 @@ COPY Kaliprasanna_05132023_175514.jpg /usr/share/nginx/html
 RUN ls -l /usr/share/nginx/html
 
 # Expose the default Nginx port 
-EXPOSE 8080
+EXPOSE 80
